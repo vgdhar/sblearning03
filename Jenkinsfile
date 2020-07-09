@@ -17,6 +17,14 @@ pipeline
                 sh '/opt/maven/bin/mvn package'
             }
         }
+	 stage('create-docker-image')
+        {
+            steps
+            {
+                
+            }
+        }
+	    
         
 	}
 }
