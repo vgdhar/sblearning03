@@ -29,6 +29,22 @@ pipeline
 			    
             }
         }
+	    stage('Push-Docker-Image')
+        {
+            steps
+            {
+		    script
+		    {
+			  withDockerRegistry(credentialsId: 'dockerhub_login', url: 'https://registry.hub.docker.com/') 
+			    {
+				    
+   				 app.push("latest")
+			    }
+		
+		    }
+			    
+            }
+        }
 	    
         
 	}
