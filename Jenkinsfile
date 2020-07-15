@@ -64,7 +64,7 @@ pipeline
 					 {
 						    echo: 'caught error: $err'
 					 }
-					 sh "sshpass -p '$PASSWD' -v ssh -o StrictHostKeyChecking=no $USERNAME@$prod_ip \"docker run --restart always --name sblearning03 -p 8080:8080 vgang/sblearning03:latest\" "
+					 sh "sshpass -p '$PASSWD' -v ssh -o StrictHostKeyChecking=no $USERNAME@$prod_ip \"docker run --restart always --name sblearning03 -p 8080:8080 -d vgang/sblearning03:latest\" "
 				    }
 				    
 			    }  
