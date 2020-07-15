@@ -47,6 +47,8 @@ pipeline
         }
 	    stage('Deploy To Production')
 	    {
+		  steps
+            		{  
 		 withCredentials([usernamePassword(credentialsId: 'prod_server_login', passwordVariable: 'PASSWD', usernameVariable: 'USERNAME')])
 			    {
 				    script
@@ -65,7 +67,8 @@ pipeline
 					 sh "sshpass -p '$PASSWD' -v ssh -o StrictHostKeyChecking=no $USERNAME@prod_ip \"docker run --restart always --name sblearning03 8080:8080 vgang/sblearning03:latest\" "
 				    }
 				    
-			    }    
+			    }  
+			}
 		    
 	    }
         
