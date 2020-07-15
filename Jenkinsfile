@@ -23,7 +23,11 @@ pipeline
             {
 		    script
 		    {
-			   docker.build("vgang/sblearning03")
+			  app= docker.build("vgang/sblearning03")
+			    app.inside
+			    {
+				    sh 'echo $(curl localhost:8080)'
+			    }
 		    }
 			    
             }
