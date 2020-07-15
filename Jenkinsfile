@@ -17,7 +17,17 @@ pipeline
                 sh '/opt/maven/bin/mvn package'
             }
         }
-
+	    stage('Build-Docker-Image')
+        {
+            steps
+            {
+		    script
+		    {
+			    docker.build("vgang/sblearning03")
+		    }
+			    
+            }
+        }
 	    
         
 	}
