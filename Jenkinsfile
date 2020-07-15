@@ -23,7 +23,7 @@ pipeline
             {
 		    script
 		    {
-			   sudo docker.build("vgang/sblearning03")
+			   docker.build("vgang/sblearning03")
 		    }
 			    
             }
