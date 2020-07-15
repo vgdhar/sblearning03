@@ -35,7 +35,7 @@ pipeline
             {
 		    script
 		    {
-			  withDockerRegistry(credentialsId: 'dockerhub_login', url: 'https://registry.hub.docker.com/') 
+			  withDockerRegistry(credentialsId: 'dockerhub_login', url: "") 
 			    {
 				    
    				 app.push("latest")
